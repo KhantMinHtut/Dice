@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Refresh Me</h1>
+
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" src="">
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" src="">
+      </div>
+
+    </div>
+
+
+  </body>
+
+  <footer>
+    www 🎲 App Brewery 🎲 com
+  </footer>
+  <script>
+
+    const images = ["./images/dice1.png", "./images/dice2.png", "./images/dice3.png", "./images/dice4.png", "./images/dice5.png", "./images/dice6.png",]
+
+    let randomNum1 = Math.floor(Math.random() * images.length);
+    let randomNum2 = Math.floor(Math.random() * images.length);
+
+    document.querySelector(".img1").src = images[randomNum1];
+    document.querySelector(".img2").src = images[randomNum2];
+
+    const h1Tag = document.querySelector("h1");
+
+    if (randomNum1 > randomNum2) {
+      h1Tag.innerText = "Player1 is winner";
+    } else if (randomNum1 < randomNum2) {
+      h1Tag.innerText = "Player2 is winner";
+    } else {
+      h1Tag.innerText = "Refresh Me";
+    }
+
+  </script>
+</html>
